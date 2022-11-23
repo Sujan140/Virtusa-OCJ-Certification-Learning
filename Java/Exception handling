@@ -1,0 +1,46 @@
+EXCEPTION HANDLING
+
+import java.io.*;
+public class ExcepTest {
+public static void main(String args[]) {
+try {
+ int a[] = new int[2];
+ System.out.println("Access element three :" + a[3]);
+}
+catch (ArrayIndexOutOfBoundsException e) {
+ System.out.println("Exception thrown :" + e);
+}
+System.out.println("Out of the block");
+}
+}
+
+class Sujan {
+    public static void main (String[] args) {
+      int a=5;
+      int b=0;
+        try{
+          System.out.println(a/b);
+        }
+      catch(ArithmeticException e){
+        e.printStackTrace();
+      }
+    }
+}
+
+
+class Example
+{
+public static void main(String args[]) {
+try{
+ int num=121/0;
+ System.out.println(num);
+}
+catch(ArithmeticException e){
+System.out.println("Number should not be divided by zero");
+}
+finally{
+System.out.println("This is finally block");
+}
+System.out.println("Out of try-catch-finally");
+}
+}
