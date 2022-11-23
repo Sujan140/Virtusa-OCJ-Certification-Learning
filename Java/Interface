@@ -1,0 +1,45 @@
+Interface practices
+
+interface printable{  
+void print();  
+}  
+class Main implements printable{  
+public void print(){System.out.println("Interface ");}  
+  
+public static void main(String args[]){ 
+    Main obj = new Main();  
+    obj.print();  
+ }  
+}  
+
+import java.util.Scanner;
+interface Calculate{
+void area(double l, double w);
+}
+class Triangle implements Calculate{
+public void area(double b,double h){
+System.out.println((0.5*b*h));
+}
+}
+class Rectangle implements Calculate{
+public void area(double l,double w){
+System.out.println((l*w));
+}
+}
+class Main{ 
+public static void main(String args[]){
+Scanner sc = newScanner(System.in);
+System.out.println("Enter Trianlge Dimension");
+
+Double base = sc.nextDouble();
+Double height = sc.nextDouble();
+Calculate shape1 =new Triangle();
+shape1.area(base,height);
+System.out.println("Enter Rectangle Dimension");
+
+Double len = sc.nextDouble();
+Double wid = sc.nextDouble();
+Calculate shape2 =new Rectangle();
+shape2.area(len,wid);
+
+}
