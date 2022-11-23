@@ -1,0 +1,47 @@
+CREATION:
+
+create table librarymanagement(bookname varchar(20) primary key,ISBN int not
+null,bookauthor varchar(20),bookcount int CHECK(bookcount&gt;=3));
+insert into librarymanagement(bookname,ISBN,bookauthor,bookcount)
+values(‘MAHABHARATHAM’,2345,’vyasa’,6);
+insert into librarymanagement(bookname,ISBN,bookauthor,bookcount)
+select * from librarymanagement;
+values(‘WINGSOFFIRE’,2345,’ABDULKALAM’,5);
+create table customer(name varchar(20),ISBN int,order int)
+
+insert into customer(name,ISBN,order)
+ADD FOREIGN KEY(ISBN) REFERENCES customer(bookname);
+Select * from customer;
+
+
+ALTER COMMANDS:
+alter table dept1 add constraint dep_uq unique (deptname);
+insert into dept1 values(1,&#39;cse&#39;);
+insert into dept1 values(2,&#39;cse&#39;);
+
+alter table s add constraint fk_did foreign key(did) references dept1(deptid);
+insert into s values (999,&#39;swetha&#39;,19,3);
+
+IMPLEMENTING AGGREGATE FUNCTIONS
+SELECT * FROM EMPLOYEE WHERE esalary &gt; 30000 AND eage &gt;= 25;
+SELECT * FROM EMPLOYEE WHERE esalary &gt; 30000 or eage &gt; 25;
+select * from employee where esalary is null;
+
+JOIN IMPLEMENTATION
+create table NSKcompany(pid varchar(20), productname varchar(20),productrate varchar(20),productvalidity varchar(20));
+insert into NSKcompany values('1001','soap','200','3months');
+insert into NSKcompany values('1005','oil','400','4months');
+insert into NSKcompany values('1007','detergent','450','11months');
+insert into NSKcompany values('1010','fruits','490','2months');
+insert into NSKcompany values('10011','shampoo','1000','5months');
+create table GShotel(fdname varchar(20),fdtype varchar(20),fdrate varchar(20),fdratings varchar(20));
+insert into GShotel values('idly','southindian','200','2.5');
+insert into GShotel values('chapathi','northindian','400','2.5');
+insert into GShotel values('noodles','chinese','1000','2.5');
+insert into GShotel values('icecreams','continental','490','2.5');
+insert into GShotel values('roti','northindian','450','2.5');
+select productrate,fdtype from NSKcompany,GShotel where fdrate=490;
+
+SELECT * FROM table1 JOIN table2 ON join_condition;
+or
+SELECT column_name(s) FROM table1, table2 WHERE table1.column_name = table2.column_name;
