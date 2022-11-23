@@ -1,0 +1,36 @@
+Abstract class Practice
+abstract class Animal {
+  public abstract void animalSound();
+  public void sleep() {
+    System.out.println("Zzz");
+  }
+}
+
+abstract class Bike{
+abstract void run();
+}
+class Honda4 extends Bike{
+void run(){
+System.out.println("running safely");}
+public static void main(String args[]){
+Bike obj = new Honda4();
+obj.run();
+}}
+
+abstract class Bank{
+abstract int getRateOfInterest();
+}
+class RD extends Bank{
+int getRateOfInterest(){return 7;}
+}
+class FD extends Bank{
+int getRateOfInterest(){return 8;}
+}
+class TestBank{
+public static void main(String args[]){
+Bank b;
+b=new RD();
+System.out.println("Rate of Interest is: "+b.getRateOfInterest()+" %");
+b=new FD();
+System.out.println("Rate of Interest is: "+b.getRateOfInterest()+" %");
+}}
