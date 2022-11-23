@@ -1,0 +1,28 @@
+package app
+import java.sql.Connection;
+import java.sql.DriverManager;
+import javax.swing.JOptionPane;
+
+class DatabaseConnect{
+	Connection conn;
+	public DatabaseConnect() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn=DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:XE","reg","12345");
+		}
+		catch(Exception e) {
+			JOptionPane.showMessageDialog(null, "Driver not found");
+		}
+	}
+}
+PreparedStatement ps=db.conn.prepareStatement("insert into employee values(?,?,?,?,?,?,?,?,?)");
+            ps.setInt(1, emp.getEmp_id());
+            ps.setString(2, emp.getEmp_name());
+            ps.setString(3, emp.getEmp_address());
+            ps.setString(4, emp.getEmp_gender());
+            ps.setString(5, emp.getEmp_email());
+            ps.setString(6, emp.getEmp_password());
+            ps.setString(7, emp.getEmp_mobile());
+            ps.setString(8, emp.getEmp_city());
+            ps.setString(9, emp.getEmp_state());
+            ps.executeUpdate();
