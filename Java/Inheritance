@@ -1,0 +1,46 @@
+Inheritance:
+    Single:
+    class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class TestInheritance{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+d.bark();  
+d.eat();  
+}}  
+  Multi level
+
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class BabyDog extends Dog{  
+void weep(){System.out.println("weeping...");}  
+}  
+class TestInheritance2{  
+public static void main(String args[]){  
+BabyDog d=new BabyDog();  
+d.weep();  
+d.bark();  
+d.eat();  
+}}  
+  NOT SUPPORTED
+class A{  
+void msg(){System.out.println("Hello");}  
+}  
+class B{  
+void msg(){System.out.println("Welcome");}  
+}  
+class C extends A,B{//suppose if it were  
+   
+ public static void main(String args[]){  
+   C obj=new C();  
+   obj.msg();  
+}  
+}  
